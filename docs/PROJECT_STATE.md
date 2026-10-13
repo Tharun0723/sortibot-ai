@@ -48,3 +48,20 @@ Build a simulation-based intelligent robotic e-waste sorting cell.
 Verify the repository files and initial Git commit.
 Do not install dependencies or begin simulation development
 until the scaffold has been verified.
+
+## Verified Robot Control Milestone
+
+- UR5e simulation launched using the installed
+  `ur_simulation_gz` package.
+- `joint_state_broadcaster`: active.
+- `scaled_joint_trajectory_controller`: active.
+- Six UR5e joint states published on `/joint_states`.
+- Six joint position command interfaces available and claimed.
+- A trajectory targeted `shoulder_pan_joint` at 0.10 rad.
+- The subsequent joint-state message reported approximately 0.10 rad.
+- Visual movement and end-to-end MoveIt planning remain to be verified.
+
+## Next Task
+
+Verify the installed UR MoveIt launch configuration, start MoveIt
+with the running simulation as appropriate, and test a planned motion.
