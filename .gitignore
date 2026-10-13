@@ -1,0 +1,27 @@
+# ROS 2 and colcon
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated model weights and datasets
+*.pt
+*.onnx
+*.engine
+datasets/
