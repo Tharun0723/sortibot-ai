@@ -65,3 +65,22 @@ until the scaffold has been verified.
 
 Verify the installed UR MoveIt launch configuration, start MoveIt
 with the running simulation as appropriate, and test a planned motion.
+
+## Verified MoveIt Planning and Execution Milestone
+
+- The combined UR5e Gazebo and MoveIt launch starts successfully.
+- RViz displays the UR5e model and the `ur_manipulator` planning group.
+- MoveIt successfully plans a trajectory.
+- `joint_state_broadcaster` is active.
+- `scaled_joint_trajectory_controller` is active.
+- MoveIt is connected to the scaled trajectory controller action.
+- A planned motion was executed, and visible robot movement was
+  confirmed in Gazebo.
+- A subsequent `/joint_states` message reported
+  `shoulder_pan_joint` at approximately 0.254 radians.
+- Exact target accuracy has not yet been verified.
+
+## Next Task
+
+Design and integrate a simulated gripper for the UR5e, then
+develop and test a basic pick-and-place workflow for SortiBot AI.
