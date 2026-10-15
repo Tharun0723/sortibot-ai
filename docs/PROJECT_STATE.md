@@ -22,7 +22,8 @@ Build a simulation-based intelligent robotic e-waste sorting cell.
 - Python libraries discovered: OpenCV and NumPy.
 - PyTorch: not installed in the tested Python environment.
 - Ultralytics: not installed in the tested Python environment.
-- MoveIt 2: not found in the package discovery check.
+- MoveIt 2: installed and verified with UR5e simulation planning
+  and trajectory execution.
 - CUDA-enabled PyTorch inference: not yet tested.
 
 ## Repository boundaries
@@ -79,8 +80,16 @@ with the running simulation as appropriate, and test a planned motion.
 - A subsequent `/joint_states` message reported
   `shoulder_pan_joint` at approximately 0.254 radians.
 - Exact target accuracy has not yet been verified.
+- The custom sortibot_description package builds successfully
+  using colcon with symlink installation.
+- The combined UR5e and gripper model is available through the
+  custom simulation and MoveIt launch files.
+- Home, Up and Random goal states were successfully planned
+  and executed with visible movement in RViz and Gazebo.
+- Gripper grasping and object attachment are not yet verified.
 
 ## Next Task
 
-Design and integrate a simulated gripper for the UR5e, then
-develop and test a basic pick-and-place workflow for SortiBot AI.
+Build the Gazebo sorting cell with a work surface, conveyor,
+sorting bins and representative e-waste objects. Then validate
+object spawning and develop a basic MoveIt pick-and-place workflow.

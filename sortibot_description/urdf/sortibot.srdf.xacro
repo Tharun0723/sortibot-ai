@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sortibot_ur5e">
+
+  <xacro:include filename="$(find ur_moveit_config)/srdf/ur_macro.srdf.xacro"/>
+
+  <xacro:ur_srdf/>
+
+  <!-- SortiBot gripper planning group -->
+  <group name="sortibot_gripper">
+    <joint name="left_finger_joint"/>
+    <joint name="right_finger_joint"/>
+  </group>
+
+  <!-- Gripper open state -->
+  <group_state name="open" group="sortibot_gripper">
+    <joint name="left_finger_joint" value="0.0"/>
+    <joint name="right_finger_joint" value="0.0"/>
+  </group_state>
+
+  <!-- Gripper closed state -->
+  <group_state name="closed" group="sortibot_gripper">
+    <joint name="left_finger_joint" value="0.02"/>
+    <joint name="right_finger_joint" value="0.02"/>
+  </group_state>
+
+  <!-- Adjacent gripper links -->
+  <disable_collisions link1="gripper_mount" link2="left_finger" reason="Adjacent"/>
+  <disable_collisions link1="gripper_mount" link2="right_finger" reason="Adjacent"/>
+
+  <disable_collisions link1="gripper_mount" link2="wrist_3_link" reason="Adjacent"/>
+</robot>
